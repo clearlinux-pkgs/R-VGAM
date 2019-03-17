@@ -4,15 +4,13 @@
 #
 Name     : R-VGAM
 Version  : 1.1.1
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/VGAM_1.1-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VGAM_1.1-1.tar.gz
 Summary  : Vector Generalized Linear and Additive Models
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-VGAM-lib = %{version}-%{release}
-Requires: R-car
-Requires: R-gam
 BuildRequires : R-car
 BuildRequires : R-gam
 BuildRequires : buildreq-R
@@ -41,10 +39,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550503329
+export SOURCE_DATE_EPOCH=1552839947
 
 %install
-export SOURCE_DATE_EPOCH=1550503329
+export SOURCE_DATE_EPOCH=1552839947
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -80,8 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library VGAM|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  VGAM || :
 
 
 %files
@@ -126,7 +123,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/VGAM/help/paths.rds
 /usr/lib64/R/library/VGAM/html/00Index.html
 /usr/lib64/R/library/VGAM/html/R.css
-/usr/lib64/R/library/VGAM/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
