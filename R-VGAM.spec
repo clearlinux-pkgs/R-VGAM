@@ -4,7 +4,7 @@
 #
 Name     : R-VGAM
 Version  : 1.1.5
-Release  : 33
+Release  : 34
 URL      : https://cran.r-project.org/src/contrib/VGAM_1.1-5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VGAM_1.1-5.tar.gz
 Summary  : Vector Generalized Linear and Additive Models
