@@ -4,7 +4,7 @@
 #
 Name     : R-VGAM
 Version  : 1.1.8
-Release  : 52
+Release  : 53
 URL      : https://cran.r-project.org/src/contrib/VGAM_1.1-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VGAM_1.1-8.tar.gz
 Summary  : Vector Generalized Linear and Additive Models
@@ -13,9 +13,6 @@ License  : GPL-2.0 GPL-3.0
 Requires: R-VGAM-lib = %{version}-%{release}
 Requires: R-VGAM-license = %{version}-%{release}
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 statistical regression models. The central algorithm is
@@ -51,10 +48,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1678473620
+export SOURCE_DATE_EPOCH=1678826780
 
 %install
-export SOURCE_DATE_EPOCH=1678473620
+export SOURCE_DATE_EPOCH=1678826780
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-VGAM
 cp %{_builddir}/VGAM/LICENCE.note %{buildroot}/usr/share/package-licenses/R-VGAM/7d05d07c41f90c3bfce9c1a5d56d124dd2db8f83 || :
